@@ -381,6 +381,7 @@ module Keycloak
           @client_id = Keycloak.resource
           @secret = Keycloak.secret
         end
+        @auth_server_url.chomp!('/')
         openid_configuration
       end
 
