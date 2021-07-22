@@ -370,7 +370,7 @@ module Keycloak
           installation = JSON File.read(Keycloak.installation_file)
           @realm = installation["realm"]
           @client_id = installation["resource"]
-          @secret = installation["credentials"]["secret"]
+          @secret = installation["credentials"] && installation["credentials"]["secret"]
           @public_key = installation["realm-public-key"]
           @auth_server_url = installation["auth-server-url"]
         else
